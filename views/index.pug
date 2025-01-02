@@ -1,0 +1,37 @@
+doctype html
+html
+    include includes/head.pug
+    body
+        main.page
+            each form in forms
+                section
+                    p.form-name #{form.name}
+                    div.form-container
+                        form.rpg-form(id=`${form.prefix}-form`)
+                            each row, n in form.rows
+                                div.form-row-wrapper
+                                    each element, n in row
+                                        - let name = element.name ? element.name : null
+                                        - let id = element.id ? element.id : (name ? `${form.prefix}-${name}` : null)
+                                        if element.type == 'radio' && !element.id
+                                            id = id + `-${n}`
+                                        - let value = element.default ? element.default : null
+                                        - let cls = element.class ? element.class.concat(['form-element']).join(" ") : 'form-element'
+                                        div(class=`form-element-wrapper ${element.type}-wrapper`)
+                                            if element.type == 'label'
+                                                include includes/label.pug
+                                            else if element.type == 'input'
+                                                include includes/input.pug
+                                            else if element.type == 'button'
+                                                include includes/button.pug
+                                            else if element.type == 'textarea'
+                                                if element.class && element.class.includes('output')
+                                                    - let isEmpty = value ? 0 : 1
+                                                    include includes/output.pug
+                                                else
+                                                    include includes/textarea.pug
+            script(src="/js/general.js")
+            script(src="/js/simple.js", type="module")
+            script(src="/js/mysql.js", type="module")
+            
+                                            
