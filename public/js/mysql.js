@@ -22,6 +22,10 @@ const users = [
         'prefix': 'remote',
         'host': '%',
         'permissions': 'SELECT, LOCK TABLES'
+    }, {
+        'prefix': 'remote',
+        'host': 'localhost',
+        'permissions': 'SELECT, SHOW VIEW, TRIGGER, LOCK'
     }
 ]
 const mysql = {

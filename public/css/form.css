@@ -67,7 +67,7 @@ button:hover {
 
 textarea.form-element {
     border: 2px solid var(--theme-color);
-    border-radius: 24px;
+    border-radius: 18px;
     padding: 12px;
     resize: none;
     /* background-color: #fff; */
@@ -82,4 +82,11 @@ textarea.form-element[data-empty="0"]:focus {
     outline: none;
     background-color: #fff;
     color: var(--theme-color);
+}
+
+.form-element.output {
+    font-size: 12px;
+}
+.form-element.output.one-line {
+    
 }
