@@ -25,7 +25,7 @@ const users = [
     }, {
         'prefix': 'dump',
         'host': 'localhost',
-        'permissions': 'SELECT, SHOW VIEW, TRIGGER, LOCK'
+        'permissions': 'SELECT, SHOW VIEW, TRIGGER, LOCK TABLES'
     }
 ]
 const mysql = {
