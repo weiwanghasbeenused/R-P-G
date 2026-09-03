@@ -23,7 +23,7 @@ const users = [
         'host': '%',
         'permissions': 'SELECT, LOCK TABLES'
     }, {
-        'prefix': 'remote',
+        'prefix': 'dump',
         'host': 'localhost',
         'permissions': 'SELECT, SHOW VIEW, TRIGGER, LOCK'
     }
